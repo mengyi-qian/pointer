@@ -20,16 +20,17 @@ button.addEventListener('click', () => {
           // beta: front back motion
           var y = e.beta;
 
+          var left = 0;
+          var top = 0;
+
           setInterval( function() {
-        		var left = 0;
-            var top = 0;
 
             if (left >= radiusX || top >= radiusY) {
               return;
             }
 
-        		left += x * 0.98;
-        		top += y * 0.98;
+        		left = left + x * 5;
+        		top = top + y * 5;
 
             $('#cursor').css('top', top + "px");
             $('#cursor').css('left', left + "px");

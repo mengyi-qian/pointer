@@ -1,7 +1,7 @@
 $('#cursor').hide();
 
-const radiusX = (window.screen.width - $('button').width) / 2;
-const radiusY = (window.screen.height - $('button').height) / 2;
+const radiusX = (window.screen.width - $('#cursor').width) / 2;
+const radiusY = (window.screen.height - $('#cursor').height) / 2;
 
 var button = document.querySelector('button')
 

@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  overflow: hidden;
 }
 
 #sphere {
@@ -8,4 +9,7 @@ body {
   border-radius: 100%;
   background-color: black;
   position: absolute;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-25px, -25px);
 }

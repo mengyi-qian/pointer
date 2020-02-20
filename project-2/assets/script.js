@@ -7,19 +7,22 @@ button.addEventListener('click', () => {
         window.addEventListener('deviceorientation', (e) => {
           console.log(e);
           // alpha: rotation around z-axis
-          var rotateDegrees = e.alpha;
+          var z = e.alpha;
           // gamma: left to right
-          var leftToRight = e.gamma;
+          var x = e.gamma;
           // beta: front back motion
-          var frontToBack = e.beta;
+          var y = e.beta;
 
-          handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+          var left = 50 + x / 3.6;
+          var top = 50 + y / 3.6;
+
+          handleOrientationEvent(x, y, z);
         })
       }
 
-      var handleOrientationEvent = function(frontToBack, leftToRight, rotateDegrees) {
-        $('#sphere').css('top', frontToBack + "px");
-        $('#sphere').css('left', leftToRight + "px");
+      var handleOrientationEvent = function(x, y, z) {
+        $('#sphere').css('top', top + "vh");
+        $('#sphere').css('left', left + "vw");
       };
     })
     .catch(console.error)

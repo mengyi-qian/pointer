@@ -22,7 +22,8 @@ button.addEventListener('click', () => {
 
           var x = 0;
           var y = 0;
-          var position = button.position();
+          var cursor = document.querySelector('#cursor');
+          var position = cursor.position();
           var left = position.left
           var top = position.top
 

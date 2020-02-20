@@ -33,7 +33,7 @@ button.addEventListener('click', () => {
           		top = y * 0.98;
             }
 
-            $('#cursor').css('transform', translate(left + "px", top + "px"));
+            $('#cursor').css({transform: translate(left + "px", top + "px")});
 
         	}, 25);
 

@@ -1,10 +1,10 @@
-$('#sphere').hide();
+$('#cursor').hide();
 
 var button = document.querySelector('button')
 
 button.addEventListener('click', () => {
   $('button').fadeOut('slow');
-  $('#sphere').delay(1000).fadeIn('slow');
+  $('#cursor').delay(1000).fadeIn('slow');
   DeviceOrientationEvent.requestPermission()
     .then(response => {
       if (response == 'granted') {
@@ -25,8 +25,8 @@ button.addEventListener('click', () => {
       }
 
       var handleOrientationEvent = function(left, top) {
-        $('#sphere').css('top', top + "vh");
-        $('#sphere').css('left', left + "vw");
+        $('#cursor').css('top', top + "vh");
+        $('#cursor').css('left', left + "vw");
       };
     })
     .catch(console.error)

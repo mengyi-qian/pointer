@@ -14,26 +14,29 @@ button.addEventListener('click', () => {
         window.addEventListener('deviceorientation', (e) => {
           console.log(e);
           // alpha: rotation around z-axis
-          var z = e.alpha;
+          var zRotation = e.alpha;
           // gamma: left to right
-          var x = e.gamma;
+          var xRotation = e.gamma;
           // beta: front back motion
-          var y = e.beta;
+          var yRotation = e.beta;
 
-          var left = 0;
-          var top = 0;
+          var x = 0;
+          var y = 0;
+          var position = button.position();
+          var left = position.left
+          var top = position.top
 
           setInterval( function() {
 
             if (Math.abs(left) >= radiusX || Math.abs(top) >= radiusY) {
-              left = 0;
-              top = 0;
+              x = 0;
+              y = 0;
             } else {
-              left = x * 0.98;
-          		top = y * 0.98;
+              x = xRotation * 0.98;
+          		y = yRotation * 0.98;
             }
 
-            $('#cursor').css({transform: translate(left + "px", top + "px")});
+            $('#cursor').css({transform: `translate(${x + "px"}, ${y + "px"})`});
 
         	}, 25);
 

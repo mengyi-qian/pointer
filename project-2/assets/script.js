@@ -16,11 +16,11 @@ button.addEventListener('click', () => {
           var left = 50 + x / 3.6;
           var top = 50 + y / 3.6;
 
-          handleOrientationEvent(x, y, z);
+          handleOrientationEvent(left, top);
         })
       }
 
-      var handleOrientationEvent = function(x, y, z) {
+      var handleOrientationEvent = function(left, top) {
         $('#sphere').css('top', top + "vh");
         $('#sphere').css('left', left + "vw");
       };

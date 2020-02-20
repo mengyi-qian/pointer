@@ -1,6 +1,7 @@
 $('#cursor').hide();
 
-const radius = (window.screen.width - $('button').width) / 2;
+const radiusX = (window.screen.width - $('button').width) / 2;
+const radiusY = (window.screen.height - $('button').height) / 2;
 
 var button = document.querySelector('button')
 
@@ -23,7 +24,7 @@ button.addEventListener('click', () => {
         		var left = 0;
             var top = 0;
 
-            if (left >= radius || right >= radius) {
+            if (left >= radiusX || top >= radiusY) {
               return;
             }
 

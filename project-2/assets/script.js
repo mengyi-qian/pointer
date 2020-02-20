@@ -1,8 +1,10 @@
+$('#sphere').hide();
+
 var button = document.querySelector('button')
 
 button.addEventListener('click', () => {
-  $('button').css('display', 'none');
-  $('#sphere').css('display', 'block');
+  $('button').fadeOut('slow');
+  $('#sphere').delay(1000).fadeIn('slow');
   DeviceOrientationEvent.requestPermission()
     .then(response => {
       if (response == 'granted') {

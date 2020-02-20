@@ -1,33 +1,38 @@
 $('#cursor').hide();
 
-var button = document.querySelector('button')
+const rx = window.screen.width + 30;
+const ry = window.screen.height + 30;
 
-button.addEventListener('click', () => {
+(function() {
+  $('#rx').text(`width: ${rx}`);
+  $('#ry').text(`height radius: ${ry}`);
+})();
+
+$('button').on('click', async () => {
+  const pms = await DeviceOrientationEvent.requestPermission();
+  if (pms !== "granted") {
+    alert("Let`s start it over again!");
+    return;
+  }
+
   $('button').fadeOut('slow');
-  $('#cursor').delay(1000).fadeIn('slow');
-  DeviceOrientationEvent.requestPermission()
-    .then(response => {
-      if (response == 'granted') {
-        window.addEventListener('deviceorientation', (e) => {
-          console.log(e);
-          // alpha: rotation around z-axis
-          var z = e.alpha;
-          // gamma: left to right
-          var x = e.gamma;
-          // beta: front back motion
-          var y = e.beta;
+  $('#cursor').delay(500).fadeIn('slow');
 
-          var left = 50 + x / 1.8;
-          var top = 50 + y / 1.8;
+  // Original position
+  let left = 0;
+  let top = 0;
 
-          handleOrientationEvent(left, top);
-        })
-      }
+  // Device Orientation Event
+  window.addEventListener('deviceorientation', (e) => {
+    left >= rx && (left = rx);
+    left <= -rx && (left = -rx);
+    top >= ry && (top = ry);
+    top <= -ry && (top = -ry);
 
-      var handleOrientationEvent = function(left, top) {
-        $('#cursor').css('top', top + "vh");
-        $('#cursor').css('left', left + "vw");
-      };
-    })
-    .catch(console.error)
-})
+    left += e.gamma * 0.98;
+    top += e.beta * 0.98;
+
+    $('#cursor').css('top', top + "px");
+    $('#cursor').css('left', left + "px");
+  });
+});

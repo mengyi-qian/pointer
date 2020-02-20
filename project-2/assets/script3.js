@@ -26,22 +26,17 @@ button.addEventListener('click', () => {
           var x = 0;
           var y = 0;
 
-
           setInterval( function() {
 
+            // if (Math.abs(left) >= radiusX || Math.abs(top) >= radiusY) {
+            //   x = 0;
+            //   y = 0;
+            // } else {
+            //   x = xRotation * 0.98;
+          	// 	y = yRotation * 0.98;
+            // }
+
             $('#cursor').css({transform: `translate(${x + "px"}, ${y + "px"})`});
-
-            if (Math.abs(left) >= radiusX || Math.abs(top) >= radiusY) {
-              x = 0;
-              y = 0;
-            } else {
-              x = xRotation * 0.98;
-          		y = yRotation * 0.98;
-            }
-
-
-
-
 
         	}, 25);
 

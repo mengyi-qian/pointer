@@ -25,12 +25,13 @@ button.addEventListener('click', () => {
 
           setInterval( function() {
 
-            if (left >= radiusX || top >= radiusY) {
-              return;
+            if (Math.abs(left) >= radiusX || Math.abs(top) >= radiusY) {
+              left = left;
+              top = top;
+            } else {
+              left = left + x * 0.98;
+          		top = top + y * 0.98;
             }
-
-        		left = left + x * 5;
-        		top = top + y * 5;
 
             $('#cursor').css('top', top + "px");
             $('#cursor').css('left', left + "px");

@@ -4,7 +4,7 @@ button.addEventListener('click', () => {
   DeviceOrientationEvent.requestPermission()
     .then(response => {
       if (response == 'granted') {
-        window.addEventListener('deviceorientation', (event) => {
+        window.addEventListener('deviceorientation', (e) => {
           console.log(e);
           // alpha: rotation around z-axis
           var rotateDegrees = event.alpha;

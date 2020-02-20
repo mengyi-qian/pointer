@@ -1,7 +1,7 @@
 $('#cursor').hide();
 
-const radiusX = (window.screen.width - $('#cursor').width) / 2;
-const radiusY = (window.screen.height - $('#cursor').height) / 2;
+const maxWidth = window.screen.width - $('#cursor').width;
+const maxHeight = window.screen.height - $('#cursor').height;
 
 var button = document.querySelector('button')
 
@@ -25,9 +25,10 @@ button.addEventListener('click', () => {
 
           setInterval( function() {
 
-            if (Math.abs(left) >= radiusX || Math.abs(top) >= radiusY) {
-              left = left;
-              top = top;
+            if (left > maxWidth) {
+              left = maxWidth;
+            } else if (top > maxHeight) {
+              top = maxHeight;
             } else {
               left = left + x * 0.98;
           		top = top + y * 0.98;

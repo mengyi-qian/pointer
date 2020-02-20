@@ -13,8 +13,8 @@ button.addEventListener('click', () => {
           // beta: front back motion
           var y = e.beta;
 
-          var left = 50 + x / 3.6;
-          var top = 50 + y / 3.6;
+          var left = 50 + x / 1.8;
+          var top = 50 + y / 1.8;
 
           handleOrientationEvent(left, top);
         })

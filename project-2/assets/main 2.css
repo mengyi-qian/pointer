@@ -9,9 +9,7 @@ body {
   border-radius: 100%;
   background-image: url(pointer.png);
   position: absolute;
-  left: calc(50vw - 30px);
-  top: calc(50vh - 30px);
-  /* transform: translate(calc(50vw - 30px), calc(50vh - 30px)); */
+  transform: translate(calc(50vw - 30px), calc(50vh - 30px));
   display: none;
 
 }

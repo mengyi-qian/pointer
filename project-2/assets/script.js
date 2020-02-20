@@ -8,6 +8,8 @@ button.addEventListener('click', () => {
   DeviceOrientationEvent.requestPermission()
     .then(response => {
       if (response == 'granted') {
+        var left = 0;
+        var top = 0;
         window.addEventListener('deviceorientation', (e) => {
           console.log(e);
           // alpha: rotation around z-axis
@@ -17,8 +19,8 @@ button.addEventListener('click', () => {
           // beta: front back motion
           var y = e.beta;
 
-          var left = left + 5 * x;
-          var top = top + 5 * y;
+          left += 5 * x;
+          top += 5 * y;
 
           handleOrientationEvent(left, top);
         })

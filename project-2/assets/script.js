@@ -1,6 +1,6 @@
 $('#cursor').hide();
 
-const rx = window.screen.width + 30;
+const rx = window.screen.width + 23;
 const ry = window.screen.height + 30;
 
 // (function() {

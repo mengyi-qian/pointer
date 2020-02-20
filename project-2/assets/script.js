@@ -3,10 +3,10 @@ $('#cursor').hide();
 const rx = window.screen.width + 30;
 const ry = window.screen.height + 30;
 
-(function() {
-  $('#rx').text(`width: ${rx - 30}`);
-  $('#ry').text(`height: ${ry - 30}`);
-})();
+// (function() {
+//   $('#rx').text(`width: ${rx - 30}`);
+//   $('#ry').text(`height: ${ry - 30}`);
+// })();
 
 $('button').on('click', async () => {
   const pms = await DeviceOrientationEvent.requestPermission();

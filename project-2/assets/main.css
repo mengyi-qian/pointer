@@ -17,15 +17,15 @@ body {
 }
 
 button {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background-color: white;
   border: 1px solid black;
   border-radius: 100%;
   font-family: serif;
-  font-size: 12pt;
+  font-size: 24pt;
   outline: none;
   position: fixed;
-  left: calc(50vw - 50px);
-  top: calc(50vh - 50px);
+  left: calc(50vw - 60px);
+  top: calc(50vh - 60px);
 }

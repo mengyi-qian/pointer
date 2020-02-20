@@ -18,8 +18,8 @@ button.addEventListener('click', () => {
       }
 
       var handleOrientationEvent = function(frontToBack, leftToRight, rotateDegrees) {
-        $('#sphere').css('top', frontToBack);
-        $('#sphere').css('left', leftToRight);
+        $('#sphere').css('top', frontToBack + “px”);
+        $('#sphere').css('left', leftToRight + “px”);
       };
     })
     .catch(console.error)

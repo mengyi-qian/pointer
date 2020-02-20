@@ -5,6 +5,9 @@ const maxHeight = window.screen.height - $('#cursor').height;
 
 var button = document.querySelector('button')
 
+var left = 0;
+var top = 0;
+
 button.addEventListener('click', () => {
   $('button').fadeOut('slow');
   $('#cursor').delay(1000).fadeIn('slow');
@@ -20,8 +23,7 @@ button.addEventListener('click', () => {
           // beta: front back motion
           var y = e.beta;
 
-          var left = 0;
-          var top = 0;
+
 
           setInterval( function() {
 

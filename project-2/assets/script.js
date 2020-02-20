@@ -1,6 +1,8 @@
 var button = document.querySelector('button')
 
 button.addEventListener('click', () => {
+  $('button').css('display', 'none');
+  $('#sphere').css('display', 'block');
   DeviceOrientationEvent.requestPermission()
     .then(response => {
       if (response == 'granted') {

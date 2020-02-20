@@ -12,4 +12,19 @@ body {
   left: 50vw;
   top: 50vh;
   transform: translate(-25px, -25px);
+  display: none;
+}
+
+button {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 100%;
+  font-family: serif;
+  font-size: 12pt;
+  outline: none;
+  position: fixed;
+  left: calc(50vw - 50px);
+  top: calc(50vh - 50px);
 }

@@ -17,16 +17,16 @@ button.addEventListener('click', () => {
           // beta: front back motion
           var y = e.beta;
 
-          var left = 50 + x / 1.8;
-          var top = 50 + y / 1.8;
+          var left = left + 5 * x;
+          var top = top + 5 * y;
 
           handleOrientationEvent(left, top);
         })
       }
 
       var handleOrientationEvent = function(left, top) {
-        $('#cursor').css('top', top + "vh");
-        $('#cursor').css('left', left + "vw");
+        $('#cursor').css('top', top + "px");
+        $('#cursor').css('left', left + "px");
       };
     })
     .catch(console.error)

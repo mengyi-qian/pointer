@@ -9,8 +9,8 @@ body {
   border-radius: 100%;
   background-image: url(pointer.png);
   position: absolute;
-  /* left: 0;
-  top: 0; */
+  /* left: 0; */
+  /* top: 0; */
   transform: translate(calc(50vw - 30px), calc(50vh - 30px));
   display: none;
 

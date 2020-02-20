@@ -28,13 +28,13 @@ button.addEventListener('click', () => {
 
           setInterval( function() {
 
-            // if (Math.abs(left) >= radiusX || Math.abs(top) >= radiusY) {
-            //   x = 0;
-            //   y = 0;
-            // } else {
-            //   x = xRotation * 0.98;
-          	// 	y = yRotation * 0.98;
-            // }
+            if (Math.abs(left) >= radiusX || Math.abs(top) >= radiusY) {
+              x = 0;
+              y = 0;
+            } else {
+              x = xRotation * 0.98;
+          		y = yRotation * 0.98;
+            }
 
             $('#cursor').css({transform: `translate(${x + "px"}, ${y + "px"})`});
 

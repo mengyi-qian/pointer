@@ -7,11 +7,11 @@ button.addEventListener('click', () => {
         window.addEventListener('deviceorientation', (e) => {
           console.log(e);
           // alpha: rotation around z-axis
-          var rotateDegrees = event.alpha;
+          var rotateDegrees = e.alpha;
           // gamma: left to right
-          var leftToRight = event.gamma;
+          var leftToRight = e.gamma;
           // beta: front back motion
-          var frontToBack = event.beta;
+          var frontToBack = e.beta;
 
           handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
         })

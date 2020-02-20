@@ -4,6 +4,9 @@ const radiusX = (window.screen.width - $('button').width) / 2;
 const radiusY = (window.screen.height - $('button').height) / 2;
 
 var button = document.querySelector('button')
+var position = $('#cursor').position();
+var left = position.left;
+var top = position.top;
 
 button.addEventListener('click', () => {
   $('button').fadeOut('slow');
@@ -27,11 +30,6 @@ button.addEventListener('click', () => {
           setInterval( function() {
 
             $('#cursor').css({transform: `translate(${x + "px"}, ${y + "px"})`});
-
-            var cursor = document.querySelector('#cursor');
-            var position = cursor.position();
-            var left = position.left;
-            var top = position.top;
 
             if (Math.abs(left) >= radiusX || Math.abs(top) >= radiusY) {
               x = 0;

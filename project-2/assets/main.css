@@ -9,7 +9,7 @@ html, body {
 #indicator {
     position: fixed;
     padding: 30px;
-    width: 120px;
+    width: 100px;
     border: 1px solid black;
 }
 
@@ -20,8 +20,6 @@ html, body {
     border-radius: 100%;
     background-image: url(pointer.png);
     position: absolute;
-    /* left: 0;
-  top: 0; */
     transform: translate(calc(50vw - 30px), calc(50vh - 30px));
     display: none;
 }

@@ -1,5 +1,7 @@
 $('#cursor').hide();
 
+const radius = (window.screen.width - $('button').width) / 2;
+
 var button = document.querySelector('button')
 
 button.addEventListener('click', () => {
@@ -17,17 +19,25 @@ button.addEventListener('click', () => {
           // beta: front back motion
           var y = e.beta;
 
-          var left = 50 + x / 1.8;
-          var top = 50 + y / 1.8;
+          setInterval( function() {
+        		var left = 0;
+            var top = 0;
 
-          handleOrientationEvent(left, top);
+            if (left >= radius || right >= radius) {
+              return;
+            }
+
+        		left += x * 0.98;
+        		top += y * 0.98;
+
+            $('#cursor').css('top', top + "px");
+            $('#cursor').css('left', left + "px");
+
+        	}, 25);
+
         })
       }
 
-      var handleOrientationEvent = function(left, top) {
-        $('#cursor').css('top', top + "vh");
-        $('#cursor').css('left', left + "vw");
-      };
     })
     .catch(console.error)
 })

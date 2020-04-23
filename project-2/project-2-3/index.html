@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>the pointer</title>
+  <link rel="icon" type="image/png" href="arrow-icon.png">
+  <style media="screen">
+  body {
+    margin: 0;
+    overflow: hidden;
+    cursor: url(point.png), auto;
+  }
+  div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  p {
+    /* font-family: LL BradfordMono Regular Web, monospace; */
+    font-family: sans-serif;
+    font-size: 32pt;
+    margin: 0;
+    padding: 10px 20px;
+  }
+  @font-face {
+      font-family: LL BradfordMono Regular Web;
+      font-style: normal;
+      font-weight: 400;
+      src: url(BradfordMonoLLWeb-Regular.eot?#iefix) format("embedded-opentype"), url(BradfordMonoLLWeb-Regular.woff2) format("woff2"), url(BradfordMonoLLWeb-Regular.woff) format("woff")
+  }
+  #currentCoords {
+    color: red;
+  }
+  #targetCoords {
+    color: blue;
+  }
+  </style>
+</head>
+<body>
+
+<div onmousemove="showCoords(event)"</div>
+
+<p>Move around your mouse and try to find the point <span id="targetCoords"></span>.</p>
+
+<p>Your current location is <span id="currentCoords">(0,0)</span>.</p>
+
+<script>
+function targetCoords() {
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  var targetX = (Math.random() * w - w / 2).toFixed(0);
+  var targetY = (Math.random() * h - h / 2).toFixed(0);
+  var targetCoords = "(" + targetX + "," + targetY + ")";
+  document.getElementById("targetCoords").innerHTML = targetCoords;
+}
+
+targetCoords();
+
+function showCoords(event) {
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  var currentX = (event.clientX - w / 2).toFixed(0);
+  var currentY = ((event.clientY - h / 2) * -1).toFixed(0);
+  if (currentX == -0) {
+    currentX = 0;
+  }
+  if (currentY == -0) {
+    currentY = 0;
+  }
+  var currentCoords = "(" + currentX + "," + currentY + ")";
+  document.getElementById("currentCoords").innerHTML = currentCoords;
+  var targetCoords = document.getElementById("targetCoords");
+  if (currentCoords == targetCoords.textContent) {
+    setTimeout(redirect, 2000);
+  }
+}
+
+function redirect() {
+  location.href = "../project-2-2/index.html";
+}
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

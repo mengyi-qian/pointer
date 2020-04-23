@@ -24,7 +24,7 @@ html, body {
     display: none;
 }
 
-button[name="start"] {
+button {
     width: 120px;
     height: 120px;
     background-color: white;

@@ -3,10 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>the pointer</title>
-    <link rel="icon" type="image/png" href="arrow-icon.png">
-    <link href="index.css" rel="stylesheet">
+    <link rel="icon" type="image/png" src="../arrow-icon.png">
     <script src="index.js"></script>
+    <style media="screen">
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      overflow: hidden;
+      font-family: monospace;
+      /* background-color: FloralWhite; */
+      overflow: hidden;
+    }
+    canvas {
+      cursor: default;
+    }
+    marquee {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      color: black;
+      font-family: "Arial", sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      /* cursor: default; */
+      pointer-events: none;
+    }
+    </style>
   </head>
+
   <body>
     <canvas id='canvas'></canvas>
     <marquee direction="right" behavior="alternate" scrollamount="16">Drag Your Mouse</marquee>

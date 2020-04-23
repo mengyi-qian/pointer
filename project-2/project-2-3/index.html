@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>the pointer</title>
-  <link rel="icon" type="image/png" href="arrow-icon.png">
+  <link rel="icon" type="image/png" href="../arrow-icon.png">
   <style media="screen">
   body {
     margin: 0;
@@ -28,7 +28,7 @@
       font-family: LL BradfordMono Regular Web;
       font-style: normal;
       font-weight: 400;
-      src: url(BradfordMonoLLWeb-Regular.eot?#iefix) format("embedded-opentype"), url(BradfordMonoLLWeb-Regular.woff2) format("woff2"), url(BradfordMonoLLWeb-Regular.woff) format("woff")
+      src: url(BradfordMonoLLWeb-Regular.eot?#iefix) format("embedded-opentype"), url(BradfordMonoLLWeb-Regular.woff2) format("woff2"), url(BradfordMonoLLWeb-Regular.woff) format("woff");
   }
   #currentCoords {
     color: red;
@@ -73,12 +73,12 @@ function showCoords(event) {
   document.getElementById("currentCoords").innerHTML = currentCoords;
   var targetCoords = document.getElementById("targetCoords");
   if (currentCoords == targetCoords.textContent) {
-    setTimeout(redirect, 2000);
+    setTimeout(redirect, 3000);
   }
 }
 
 function redirect() {
-  location.href = "../project-2-2/index.html";
+  location.href = "../index.html";
 }
 
 

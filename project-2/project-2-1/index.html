@@ -3,7 +3,46 @@
 <head>
     <title>pointer</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="assets/main.css" type="text/css" />
+    <link rel="stylesheet" src="assets/main.css" type="text/css" />
+    <link rel="icon" type="image/png" src="../arrow-icon.png">
+    <style media="screen">
+    html, body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    #indicator {
+        position: fixed;
+        padding: 30px;
+        width: 100px;
+        border: 1px solid black;
+    }
+    #cursor {
+        width: 46px;
+        height: 60px;
+        /* border: black 1px solid; */
+        /* border-radius: 100%; */
+        background-image: url(pointer.png);
+        position: absolute;
+        transform: translate(calc(50vw - 23px), calc(50vh - 30px));
+        display: none;
+    }
+    button {
+        width: 120px;
+        height: 120px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 100%;
+        font-family: serif;
+        font-size: 24pt;
+        outline: none;
+        position: fixed;
+        left: calc(50vw - 60px);
+        top: calc(50vh - 60px);
+    }
+    </style>
 </head>
 
 <body>
@@ -12,8 +51,8 @@
     <div id="rx"></div>
     <div id="ry"></div>
   </div> -->
-  <button type="button" name="start">start</button>
-  <button type="button" name="button">button</button>
+  <button type="button" id="start">start</button>
+  <!-- <button type="button" id="button">button</button> -->
   <script src="assets/jquery.min.js"></script>
   <script src="assets/script.js"></script>
 </body>

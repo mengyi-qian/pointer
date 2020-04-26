@@ -26,8 +26,8 @@ $('button').on('click', async () => {
   window.addEventListener('deviceorientation', (e) => {
     left >= rx && (left = rx);
     left <= -rx && (left = -rx);
-    top >= ry && (top = (ry - 300));
-    top <= -ry && (top = -(ry - 300));
+    top >= ry && (top = ry);
+    top <= -ry && (top = -ry);
 
     left += e.gamma * 0.98;
     top += e.beta * 0.98;

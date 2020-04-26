@@ -12,6 +12,10 @@
         width: 100%;
         overflow: hidden;
     }
+    *  {
+      font-size: 24pt;
+      text-align: center;
+    }
     #indicator {
         position: fixed;
         padding: 30px;
@@ -36,7 +40,6 @@
         border: 1px solid black;
         border-radius: 100%;
         font-family: serif;
-        font-size: 24pt;
         text-align: center;
         outline: none;
         position: fixed;
@@ -51,13 +54,18 @@
       text-decoration: none;
       color: black;
       font-family: sans-serif;
-      font-size: 15pt;
       padding: 6px 10px;
       position: absolute;
       top: 50vh;
       left: 50vw;
       -webkit-transform: translateX(-50%) translateY(-50%);
       z-index: 0;
+    }
+    p {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
     }
     </style>
 </head>
@@ -68,6 +76,7 @@
     <div id="rx"></div>
     <div id="ry"></div>
   </div> -->
+  <p id="tips">rotate your screen<br>and rotate it back again</p>
   <a href="http://pointtothepointer.com/" id="button">button</a>
   <button type="button" id="start">release</button>
   <script src="assets/jquery.min.js"></script>

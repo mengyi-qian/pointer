@@ -16,6 +16,7 @@ $('button').on('click', async () => {
   }
 
   $('button').fadeOut('slow');
+  $('p').fadeOut('slow');
   $('#cursor').delay(500).fadeIn('slow');
 
   // Original position

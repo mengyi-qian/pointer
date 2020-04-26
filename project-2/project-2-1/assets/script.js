@@ -11,7 +11,7 @@ const ry = window.screen.height + 30;
 $('button').on('click', async () => {
   const pms = await DeviceOrientationEvent.requestPermission();
   if (pms !== "granted") {
-    alert("Let`s start it over again!");
+    alert("Let‘s start it over again!");
     return;
   }
 

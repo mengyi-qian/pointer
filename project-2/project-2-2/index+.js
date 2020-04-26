@@ -38,23 +38,23 @@ window.onload=function(){
     !isEnd && draw();
     // draw();
   }
-  var lastPosX = []
+
   function draw() {
     if (mouse.down) {
       var d = distance(position, mouse);
-      var fontSize = 20;
+      var fontSize = 14;
       var letter = letters[counter];
-      var stepSize = textWidth(letter, fontSize);
-      lastPosX.push(position.x)
+      var stepSize = textWidth(letter, 20);
+
       if (d > stepSize) {
         // 鼠标旋转弧度值
         var angle = Math.atan2(mouse.y - position.y, mouse.x - position.x);
 
-        context.font = fontSize + 'px Georgia';
+        context.font = fontSize + 'px Courier';
 
         context.save();
-        context.translate(position.x + d, position.y);
-
+        context.translate(position.x + 1, position.y);
+        context.rotate(angle);
         context.fillText(letter, 0, 0);
         context.restore();
 
@@ -85,6 +85,7 @@ window.onload=function(){
 
     ys = pt2.y - pt.y;
     ys = ys * ys;
+
     return Math.sqrt(xs + ys);
   }
 
@@ -93,7 +94,6 @@ window.onload=function(){
     mouse.down = true;
     position.x = oEvent.pageX;
     position.y = oEvent.pageY;
-    draw()
   }
 
   function mouseUp() {
@@ -103,7 +103,7 @@ window.onload=function(){
 
   // 设置文字大小
   function textWidth(string, size) {
-    context.font = size + 'px Georgia';
+    context.font = size + 'px Courier';
     if (context.fillText) {
       return context.measureText(string).width;
     } else if (context.mozDrawText) {

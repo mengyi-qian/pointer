@@ -73,12 +73,14 @@ function showCoords(event) {
   document.getElementById("currentCoords").innerHTML = currentCoords;
   var targetCoords = document.getElementById("targetCoords");
   if (currentCoords == targetCoords.textContent) {
-    setTimeout(redirect, 3000);
+    setTimeout(redirect, 2000);
   }
 }
 
 function redirect() {
-  location.href = "http://pointtothepointer.com/";
+  // location.href = "http://pointtothepointer.com/";
+  targetCoords()
+  showCoords(event)
 }
 
 

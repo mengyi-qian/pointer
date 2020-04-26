@@ -34,7 +34,5 @@ $('button').on('click', async () => {
 
     $('#cursor').css('top', top + "px");
     $('#cursor').css('left', left + "px");
-  }
-
   });
 });

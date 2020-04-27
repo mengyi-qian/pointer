@@ -31,10 +31,13 @@ function render ( x, y ) {
 		// $cursor.classList.add('pointer');
 		$link.href = $hovered.href;
 		$link.target = $hovered.target;
+		$link.innerHTML = `<div class = "center">` + $hovered.innerHTML + `</div>`;
+		// console.log($link.innerHTML);
 	} else {
 		// $cursor.classList.remove('pointer');
 		$link.removeAttribute('href');
 		$link.removeAttribute('target');
+		$link.innerHTML = " ";
 	}
 }
 
